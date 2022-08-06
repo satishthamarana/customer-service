@@ -17,8 +17,8 @@ pipeline {
 	steps {
 	   cleanWs()
 	}
-
-     steps {
+  stage('Clone repository') {
+    steps {
       dir("application") {
 			checkout scm
 			script {
@@ -28,6 +28,8 @@ pipeline {
 			
      }
 			
+  }
+     
 
     stage('Build') {
       steps {
