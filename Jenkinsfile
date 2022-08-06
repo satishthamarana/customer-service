@@ -17,6 +17,7 @@ pipeline {
 	steps {
 	   cleanWs()
 	}
+    }
   stage('Clone repository') {
     steps {
       dir("application") {
@@ -70,4 +71,5 @@ pipeline {
 
   }
 
-}
+ }
+
