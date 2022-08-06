@@ -1,0 +1,40 @@
+
+   
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-deployment
+  labels:
+    app: customerapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customerapp
+  template:
+    metadata:
+      labels:
+        app: customerapp 
+    spec:
+      containers:
+      - name: customerserver
+        image: thetips4you/customerapp:latest
+        ports:
+        - containerPort: 3000
+        
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-service
+spec:
+  selector:
+    app: customerapp 
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 3000
+    nodePort: 31110
