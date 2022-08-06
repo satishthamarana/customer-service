@@ -2,7 +2,7 @@ pipeline {
 
 
   environment {
-    dockerimagename = "thetips4you/customerapp"
+    dockerimagename = "thamarana/customerapp"
     dockerImage = ""
   }
 
@@ -13,12 +13,21 @@ pipeline {
   }
 
   stages {
+    stage('Setup Workspace') {
+	steps {
+	   cleanWs()
+	}
 
-    stage('Checkout Source') {
-      steps {
-        git 'https://github.com/satishthamarana/customer-service.git'
+     steps {
+      dir("application") {
+			checkout scm
+			script {
+				git_rev_count = sh(script: "git rev-list --all --count", returnStdout: true).trim()
       }
-    }
+    } 
+			
+     }
+			
 
     stage('Build') {
       steps {
