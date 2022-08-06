@@ -1,11 +1,16 @@
 pipeline {
 
+
   environment {
     dockerimagename = "thetips4you/customerapp"
     dockerImage = ""
   }
 
   agent any
+  tools { 
+        maven 'maven3'
+        jdk 'jdk-11'
+  }
 
   stages {
 
