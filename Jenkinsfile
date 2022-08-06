@@ -21,7 +21,7 @@ pipeline {
   stage('Clone repository') {
     steps {
       dir("application") {
-			checkout scm
+			git 'https://github.com/satishthamarana/customer-service.git'
 			
     } 
 			
