@@ -31,17 +31,22 @@ pipeline {
      
     stage('Build') {
       steps {
-	  
-            sh 'mvn -B -DskipTests clean package'
+        dir ("customer-pipeline") {
+           sh 'mvn -B -DskipTests clean package'
+        }
+           
 	  
       }
     }
 
     stage('Docker Build image') {
       steps{
-        script {
+        dir ("customer-pipeline"){
+          script {
           dockerImage = docker.build dockerimagename
         }
+        }
+        
       }
     }
 
