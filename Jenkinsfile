@@ -22,9 +22,7 @@ pipeline {
     steps {
       dir("application") {
 			checkout scm
-			script {
-				git_rev_count = sh(script: "git rev-list --all --count", returnStdout: true).trim()
-      }
+			
     } 
 			
      }
