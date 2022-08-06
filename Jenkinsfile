@@ -41,11 +41,11 @@ pipeline {
 
     stage('Docker Build image') {
       steps{
-        dir ("customer-pipeline"){
+      
           script {
           dockerImage = docker.build dockerimagename
         }
-        }
+        
         
       }
     }
