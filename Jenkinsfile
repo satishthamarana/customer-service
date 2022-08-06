@@ -20,10 +20,10 @@ pipeline {
     }
   stage('Clone repository') {
     steps {
-      dir("application") {
+      
 			git 'https://github.com/satishthamarana/customer-service.git'
 			
-    } 
+    
 			
      }
 			
@@ -31,9 +31,9 @@ pipeline {
      
     stage('Build') {
       steps {
-	    dir("application") {
+	  
             sh 'mvn -B -DskipTests clean package'
-	  }
+	  
       }
     }
 
