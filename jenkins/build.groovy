@@ -49,10 +49,20 @@ pipeline {
     stage('Build & Package') {
       steps {
         script {
+          sh "pwd"
           sh("mvn -Dintegration-tests.skip=true -Dbuild.number=${BUILD_NUMBER} clean package")
         }
       }
     }
+    stage('Copy Artifact') {
+      steps { 
+        script {
+           sh 'pwd'
+		       sh 'cp -r target/*.jar .'
+            }
+                
+           }
+       }
     stage('Docker Build') {
       steps {
         script {
