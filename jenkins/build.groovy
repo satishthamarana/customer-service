@@ -43,6 +43,7 @@ pipeline {
           latestTag = git_rev_count 
           currentBuild.displayName = "# ${BUILD_NUMBER}-${BRANCH_NAME}"
           currentBuild.description = git_rev_count
+          sh("git_rev_count")
         }
       }
     }
