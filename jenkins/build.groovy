@@ -75,7 +75,7 @@ pipeline {
          script {
             docker.withRegistry("https://registry.hub.docker.com", "registryCredential") {
                customImage.push("${latestTag}")
-               sh("docker rmi -f thamarana/customer-rating:${latestTag}")
+               sh("docker rmi -f thamarana/customer-service:${latestTag}")
             }
        }
       }
