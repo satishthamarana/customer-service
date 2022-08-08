@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: customerserver
-        image: thetips4you/customerapp:latest
+        image: thamarana/customer-rating:tagname
         ports:
         - containerPort: 3000
         
