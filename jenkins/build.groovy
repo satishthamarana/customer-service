@@ -1,4 +1,4 @@
-def SERVICE = 'customer-rating'
+def SERVICE = 'customer-service'
 def customImage
 def latestTag
 
