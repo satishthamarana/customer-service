@@ -7,8 +7,7 @@ pipeline {
                         sh 'cp -R helm/* .'
 		        sh 'ls -ltr'
                         sh 'pwd'
-                        sh '/usr/local/bin/helm upgrade --install customer-service customer  --set image.repository=registry.hub.docker.com/thamarana
-/customer-rating --set image.tag=1'
+                        sh '/usr/local/bin/helm upgrade --install customer-service customer  --set image.repository=registry.hub.docker.com/thamarana/customer-rating customer--set image.tag=1'
 
               			
             }           

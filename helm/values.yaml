@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: thamarana/customer
+  repository: thamarana/customer-rating
   tag: latest
   pullPolicy: IfNotPresent
 
